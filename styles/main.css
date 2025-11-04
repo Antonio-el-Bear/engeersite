@@ -283,3 +283,222 @@ img {
 .backdrop-blur {
     backdrop-filter: blur(10px);
 }
+
+/* Page-specific styles */
+
+/* Projects page */
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid rgba(94, 234, 212, 0.2);
+    color: #5EEAD4;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #2DD4BF, #14B8A6);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
+}
+
+.project-card .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Services page */
+.service-section {
+    scroll-margin-top: 100px;
+}
+
+.service-visual {
+    transition: all 0.5s ease;
+}
+
+.service-visual:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(45, 212, 191, 0.2);
+}
+
+.quick-nav-btn {
+    padding: 10px 24px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(94, 234, 212, 0.3);
+    color: #5EEAD4;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.quick-nav-btn:hover {
+    background: rgba(45, 212, 191, 0.1);
+    border-color: #2DD4BF;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2DD4BF, transparent);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+/* Contact page */
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0F0F0F;
+    border: 2px solid rgba(94, 234, 212, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #2DD4BF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+}
+
+.form-input.error {
+    border-color: #EF4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input.highlight {
+    border-color: #2DD4BF;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2);
+    animation: highlight-pulse 2s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(45, 212, 191, 0.4); }
+}
+
+.form-group {
+    position: relative;
+}
+
+.error-message {
+    display: none;
+    color: #EF4444;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(94, 234, 212, 0.2);
+    border-radius: 12px;
+    color: #5EEAD4;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: rgba(45, 212, 191, 0.1);
+    border-color: #2DD4BF;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(94, 234, 212, 0.3);
+}
+
+.faq-toggle {
+    transition: all 0.3s ease;
+}
+
+.faq-content {
+    transition: all 0.3s ease;
+}
+
+/* Navigation active states */
+.nav-link.active {
+    color: white;
+    position: relative;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.mobile-nav-link.active {
+    color: white;
+}
+
+/* Modal animations */
+.bg-\[#1A1A1A\] {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Map styles */
+.custom-marker {
+    background: none !important;
+    border: none !important;
+}
+
+/* Interactive elements */
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+    
+    .quick-nav-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .process-step::after {
+        display: none;
+    }
+    
+    .form-input {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
