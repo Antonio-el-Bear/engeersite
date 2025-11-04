@@ -1,0 +1,285 @@
+/* Tailwind Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.scale-up {
+    animation: scaleUp 0.6s ease-out forwards;
+}
+
+/* Delay Classes */
+.delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+/* Navigation Styles */
+.nav-link {
+    color: #5EEAD4;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2DD4BF, #14B8A6);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-nav-link {
+    color: #5EEAD4;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: white;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #2DD4BF, #14B8A6);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #14B8A6, #0F766E);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(45, 212, 191, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #5EEAD4;
+    padding: 14px 32px;
+    border: 2px solid #5EEAD4;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #5EEAD4;
+    color: #0A0A0A;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(94, 234, 212, 0.2);
+}
+
+/* Card Hover Effects */
+.project-card, .service-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover, .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(45, 212, 191, 0.1);
+}
+
+/* Navbar Scroll Effect */
+.navbar-scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(94, 234, 212, 0.1);
+}
+
+/* Form Styles */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #2DD4BF, #14B8A6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #14B8A6, #0F766E);
+}
+
+/* Loading Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Canvas */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .fade-in, .slide-up {
+        animation-duration: 0.6s;
+    }
+    
+    .project-card:hover, .service-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Performance Optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Dark theme utilities */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
