@@ -1,143 +1,254 @@
 // Services data
 const servicesData = [
     {
-        id: 'design',
-        title: 'Design & Planning',
-        icon: 'drafting-compass',
-        description: 'Comprehensive architectural and engineering design services from concept to detailed construction documents.',
+        id: 'product-development',
+        title: 'Product Development',
+        icon: 'lightbulb',
+        description: 'Taking a conceptual idea from concept to reality. We transform sketches into fully functional products with consideration for usage, materials, and cost-effectiveness.',
         features: [
-            'Conceptual Design Development',
-            'Detailed Engineering Drawings',
-            '3D Modeling & Visualization',
-            'Code Compliance Analysis',
-            'Design Optimization',
-            'Sustainability Integration'
+            'Ideation/Concepts',
+            '3D Rendering of CAD models',
+            'Design Phase Analysis',
+            'Material Selection',
+            'Cost Analysis',
+            'Functional Product Design'
         ],
         process: [
-            'Initial consultation and site analysis',
-            'Conceptual design and feasibility study',
-            'Detailed design development',
-            'Technical specifications',
-            'Regulatory approval assistance',
-            'Construction documentation'
+            'Conceptual sketch analysis',
+            'Structured design approach',
+            'Detailed phase review',
+            'Problem resolution',
+            'Manufacturing preparation',
+            'Real-world application testing'
         ],
         benefits: [
-            'Reduced construction costs',
-            'Faster project delivery',
-            'Regulatory compliance assurance',
-            'Enhanced project visualization',
-            'Risk mitigation',
-            'Sustainable design solutions'
+            'Concept to reality transformation',
+            'Cost-effective design solutions',
+            'Problem identification before manufacturing',
+            'Optimal material selection',
+            'Functional design assurance',
+            'Manufacturing readiness'
         ],
         pricing: {
-            basic: '$50-75/sq ft',
-            standard: '$75-100/sq ft',
-            premium: '$100-150/sq ft'
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
         }
     },
     {
-        id: 'structural',
-        title: 'Structural Engineering',
-        icon: 'building-2',
-        description: 'Advanced structural analysis and design for buildings, bridges, and infrastructure projects.',
+        id: 'mechanical-design',
+        title: 'Mechanical Design',
+        icon: 'cog',
+        description: 'Comprehensive mechanical design and development of mechanical systems, machinery, and equipment for manufacturing processes and everyday applications.',
         features: [
-            'Structural Analysis & Design',
-            'Seismic Engineering',
-            'Foundation Design',
-            'Steel & Concrete Design',
-            'Structural Health Monitoring',
-            'Retrofitting & Rehabilitation'
+            'Mechanical Designs',
+            'Sheet metal Designs',
+            'Structural Designs',
+            'Mechanical Conceptual Designs',
+            'Design Calculations/Analysis',
+            '2D/3D Drawings/Modelling using CAD',
+            'Drawings and "Exploded" Views',
+            'Manufacturing Drawings',
+            'Patent Drawings',
+            'Design Specifications',
+            'Codes/Standards Compliance',
+            'Finite Element Analysis (FEA)'
         ],
         process: [
-            'Structural assessment and analysis',
-            'Load calculations and modeling',
-            'Material selection and sizing',
-            'Connection design',
-            'Peer review and validation',
-            'Construction support'
+            'Design requirement analysis',
+            'System design and modeling',
+            'Component design and selection',
+            'Transparent design documentation',
+            'Manufacturing preparation',
+            'Maintenance planning'
         ],
         benefits: [
-            'Safety and code compliance',
-            'Optimized material usage',
-            'Long-term durability',
-            'Cost-effective solutions',
-            'Performance optimization',
-            'Future adaptability'
+            'Simple and effective designs',
+            'Transparent design process',
+            'Optimal equipment maintenance',
+            'Client and operator clarity',
+            'Problem-solving focus',
+            'Technical solution optimization'
         ],
         pricing: {
-            basic: '$3-5/sq ft',
-            standard: '$5-8/sq ft',
-            premium: '$8-12/sq ft'
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
         }
     },
     {
-        id: 'management',
-        title: 'Project Management',
-        icon: 'clipboard-check',
-        description: 'End-to-end project management ensuring timely delivery, quality control, and budget adherence.',
+        id: 'electrical-design',
+        title: 'Electrical Design',
+        icon: 'zap',
+        description: 'Specializing in development of small to large electronic systems. We can re-develop outdated systems according to customer needs and modern standards.',
         features: [
-            'Project Planning & Scheduling',
-            'Budget Management',
-            'Quality Assurance',
-            'Risk Management',
-            'Stakeholder Coordination',
-            'Progress Monitoring'
+            'Electronic System Development',
+            'System Re-development',
+            'Modern Standards Compliance',
+            'Mass Production Components',
+            'Testing Components',
+            'Custom Electronic Solutions'
         ],
         process: [
-            'Project initiation and planning',
-            'Resource allocation and scheduling',
-            'Execution monitoring',
-            'Quality control checkpoints',
-            'Risk assessment and mitigation',
-            'Project closeout and handover'
+            'System assessment and requirements',
+            'Electronic design and development',
+            'Component manufacturing',
+            'Testing and validation',
+            'Mass production setup',
+            'Quality assurance'
         ],
         benefits: [
-            'On-time project delivery',
-            'Budget control and transparency',
-            'Quality assurance',
-            'Risk mitigation',
-            'Stakeholder satisfaction',
-            'Efficient resource utilization'
+            'Modern electronic solutions',
+            'Outdated system upgrades',
+            'Mass production capability',
+            'Custom component development',
+            'Testing and validation',
+            'Standards compliance'
         ],
         pricing: {
-            basic: '8-12% of project cost',
-            standard: '12-16% of project cost',
-            premium: '16-20% of project cost'
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
         }
     },
     {
         id: 'consulting',
-        title: 'Engineering Consulting',
+        title: 'Consulting Services',
         icon: 'users',
-        description: 'Expert consulting services for complex engineering challenges and technical problem-solving.',
+        description: 'Our skilled advisory team works with you to identify the best path forward for your facilities and operations, applying the right engineering solutions from various technical disciplines.',
         features: [
-            'Technical Advisory',
-            'Feasibility Studies',
-            'Code Compliance Review',
-            'Value Engineering',
-            'Expert Witness Services',
-            'Training & Development'
+            'Industrial Engineering Solutions',
+            'Lean Manufacturing Consulting',
+            'Mechanical Engineering Consulting',
+            'Design Engineering Consulting',
+            'Automotive Engineering Consulting',
+            'Supply Chain Consulting'
         ],
         process: [
-            'Problem identification and scoping',
-            'Technical analysis and research',
-            'Solution development',
+            'Business assessment and analysis',
+            'Solution identification',
             'Implementation planning',
-            'Knowledge transfer',
+            'Technical discipline application',
+            'Operational optimization',
             'Ongoing support'
         ],
         benefits: [
-            'Expert technical guidance',
-            'Cost optimization',
-            'Risk reduction',
-            'Innovative solutions',
-            'Regulatory compliance',
-            'Knowledge enhancement'
+            'Expert advisory services',
+            'Operational challenge solutions',
+            'Multi-discipline expertise',
+            'Business optimization',
+            'Supply chain planning',
+            'Manufacturing efficiency'
         ],
         pricing: {
-            basic: '$150-200/hour',
-            standard: '$200-300/hour',
-            premium: '$300-500/hour'
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
+        }
+    },
+    {
+        id: 'robotic-systems',
+        title: 'Robotic Systems',
+        icon: 'bot',
+        description: 'Specializing in robotic systems and machine design from standalone operations to fully integrated systems. As system integrators for Yaskawa South Africa.',
+        features: [
+            'Palletising Solutions',
+            'Robotic Welding Solutions',
+            'Pick & Place Solutions',
+            'Custom Robotic Applications',
+            'Standalone Operations',
+            'Fully Integrated Systems'
+        ],
+        process: [
+            'Robotic system design',
+            'Integration planning',
+            'Custom application development',
+            'System testing and validation',
+            'Installation and commissioning',
+            'Maintenance and support'
+        ],
+        benefits: [
+            'Robust equipment design',
+            'Functional and elegant solutions',
+            'Easy maintenance focus',
+            'Yaskawa partnership expertise',
+            'Custom robotic applications',
+            'Integrated system solutions'
+        ],
+        pricing: {
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
+        }
+    },
+    {
+        id: 'industrial-automation',
+        title: 'Industrial Automation',
+        icon: 'cpu',
+        description: 'Control of machinery and processes through autonomous systems using robotics and computer software to increase productivity, reduce costs, and improve precision.',
+        features: [
+            'Automated Conveyance Systems',
+            'Automated Guided Vehicles',
+            'Automated Packaging Systems',
+            'Automated Robotic Systems',
+            'Automated Pallet Handling Systems',
+            'Automated Warehouse Storage Systems'
+        ],
+        process: [
+            'Automation assessment',
+            'System design and planning',
+            'Technology integration',
+            'Testing and commissioning',
+            'Training and handover',
+            'Ongoing optimization'
+        ],
+        benefits: [
+            'Increased productivity',
+            'Reduced operational costs',
+            'Enhanced precision',
+            'Flexible operations',
+            'Employee cost reduction',
+            'Integrated system solutions'
+        ],
+        pricing: {
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
+        }
+    },
+    {
+        id: 'logistics-warehouse',
+        title: 'Logistics & Warehouse Equipment',
+        icon: 'warehouse',
+        description: 'Turnkey solution provider optimizing entire warehouse flow including materials, goods, stock, and distribution to accommodate current needs and future growth.',
+        features: [
+            'Automated AGV Systems',
+            'Pallet Racking Solutions',
+            'Static Storage Solutions',
+            'Dynamic Storage Solutions',
+            'Material Handling Equipment',
+            'Warehouse Optimization'
+        ],
+        process: [
+            'Warehouse flow analysis',
+            'Optimization planning',
+            'Equipment selection',
+            'System integration',
+            'Installation and setup',
+            'Growth accommodation'
+        ],
+        benefits: [
+            'Complete warehouse optimization',
+            'Expert engineering team',
+            'Scalable solutions',
+            'Current and future needs',
+            'Turnkey implementation',
+            'Flow optimization'
+        ],
+        pricing: {
+            basic: 'Quote on request',
+            standard: 'Quote on request',
+            premium: 'Quote on request'
         }
     }
 ];
