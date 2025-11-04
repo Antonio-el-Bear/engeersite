@@ -1,0 +1,31 @@
+{
+  "name": "Milestone",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string",
+      "description": "Year of milestone"
+    },
+    "title": {
+      "type": "string",
+      "description": "Milestone title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Milestone description"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name from lucide-react"
+    },
+    "order": {
+      "type": "number",
+      "description": "Chronological order"
+    }
+  },
+  "required": [
+    "year",
+    "title",
+    "description"
+  ]
+}

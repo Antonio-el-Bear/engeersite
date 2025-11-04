@@ -1,0 +1,38 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Team member name"
+    },
+    "role": {
+      "type": "string",
+      "description": "Job title/role"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Professional biography"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Profile photo"
+    },
+    "linkedin": {
+      "type": "string",
+      "description": "LinkedIn profile URL"
+    },
+    "specialization": {
+      "type": "string",
+      "description": "Area of expertise"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "name",
+    "role"
+  ]
+}

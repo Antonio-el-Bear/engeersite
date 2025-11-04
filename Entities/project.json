@@ -1,0 +1,77 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Infrastructure",
+        "Commercial",
+        "Residential",
+        "Industrial",
+        "Renovation"
+      ],
+      "description": "Project category"
+    },
+    "location": {
+      "type": "string",
+      "description": "Project location"
+    },
+    "year": {
+      "type": "string",
+      "description": "Year completed or ongoing"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Completed",
+        "Ongoing",
+        "Planning"
+      ],
+      "default": "Completed"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief project description"
+    },
+    "details": {
+      "type": "string",
+      "description": "Full project details and story"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Main project image"
+    },
+    "before_image": {
+      "type": "string",
+      "description": "Before image for comparison"
+    },
+    "after_image": {
+      "type": "string",
+      "description": "After image for comparison"
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "area": {
+          "type": "string"
+        },
+        "budget": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "location"
+  ]
+}
