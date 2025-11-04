@@ -1,14 +1,324 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ENGITECH - Engineering Precision. Designing Progress." />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENGITECH - Engineering Precision. Designing Progress.</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <meta name="description" content="ENGITECH - Civil and Structural Engineers specializing in precision engineering and progressive design solutions.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-[#0A0A0A] text-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="flex items-center gap-2">
+                        <!-- Simple geometric logo -->
+                        <div class="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md flex items-center justify-center">
+                            <div class="w-4 h-4 border-2 border-white rotate-45"></div>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">ENGITECH</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Home</a>
+                    <a href="#projects" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Projects</a>
+                    <a href="#services" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Services</a>
+                    <a href="#contact" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-teal-300 hover:text-white transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-[#1A1A1A] border-t border-teal-500/10 hidden">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Home</a>
+                <a href="#projects" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Projects</a>
+                <a href="#services" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Services</a>
+                <a href="#contact" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <!-- Animated Background -->
+            <canvas id="hero-canvas" class="absolute inset-0 opacity-20"></canvas>
+            
+            <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">
+                    ENGITECH
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-teal-300 mb-8 font-light tracking-wide slide-up delay-400">
+                    Civil and Structural Engineers
+                </p>
+                
+                <!-- Secondary Heading -->
+                <h2 class="text-3xl md:text-5xl font-light mb-8 slide-up delay-600">
+                    Building Tomorrow, <span class="text-teal-400">Today.</span>
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-lg md:text-xl text-teal-300 max-w-3xl mx-auto mb-12 leading-relaxed fade-in delay-600">
+                    Precision engineering meets innovative design. We create structural solutions 
+                    that stand the test of time, combining decades of expertise with cutting-edge technology 
+                    to deliver exceptional results for every project.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in delay-800">
+                    <a href="#projects" class="btn-primary">
+                        View Our Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 fade-in delay-500">
+                <div class="flex flex-col items-center gap-2 text-teal-400 text-sm">
+                    <span>Scroll to explore</span>
+                    <div class="w-6 h-10 border-2 border-teal-500/30 rounded-full flex justify-center pt-2 float">
+                        <div class="w-1 h-2 bg-teal-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-[#0F0F0F]">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Featured Projects</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        Showcasing our commitment to engineering excellence and innovative solutions across various sectors.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project cards will be dynamically loaded here -->
+                    <div class="project-card bg-[#1A1A1A] rounded-lg overflow-hidden border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="aspect-[4/3] bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center">
+                            <i data-lucide="building-2" class="w-16 h-16 text-teal-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Modern Office Complex</h3>
+                            <p class="text-teal-300 text-sm mb-4">Structural engineering for a 15-story commercial building with innovative seismic design.</p>
+                            <span class="text-xs text-teal-500">2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-[#1A1A1A] rounded-lg overflow-hidden border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="aspect-[4/3] bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center">
+                            <i data-lucide="bridge" class="w-16 h-16 text-teal-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Urban Bridge Design</h3>
+                            <p class="text-teal-300 text-sm mb-4">Cable-stayed bridge design connecting urban districts with sustainable materials.</p>
+                            <span class="text-xs text-teal-500">2023</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-[#1A1A1A] rounded-lg overflow-hidden border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="aspect-[4/3] bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center">
+                            <i data-lucide="home" class="w-16 h-16 text-teal-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Residential Complex</h3>
+                            <p class="text-teal-300 text-sm mb-4">Eco-friendly residential development with advanced structural systems.</p>
+                            <span class="text-xs text-teal-500">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        Comprehensive engineering solutions tailored to meet the unique demands of each project.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="service-card text-center p-8 bg-[#1A1A1A] rounded-lg border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="building-2" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Infrastructure Design</h3>
+                        <p class="text-teal-300 text-sm">Comprehensive design solutions for bridges, roads, and urban infrastructure projects.</p>
+                    </div>
+                    
+                    <div class="service-card text-center p-8 bg-[#1A1A1A] rounded-lg border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="calculator" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Structural Analysis</h3>
+                        <p class="text-teal-300 text-sm">Advanced structural engineering and analysis for buildings of all scales.</p>
+                    </div>
+                    
+                    <div class="service-card text-center p-8 bg-[#1A1A1A] rounded-lg border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="hard-hat" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Construction Management</h3>
+                        <p class="text-teal-300 text-sm">End-to-end project management ensuring timely and quality delivery.</p>
+                    </div>
+                    
+                    <div class="service-card text-center p-8 bg-[#1A1A1A] rounded-lg border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="leaf" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Sustainability Consulting</h3>
+                        <p class="text-teal-300 text-sm">Green building strategies and sustainable engineering solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-[#0F0F0F]">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        Ready to discuss your next project? We're here to help bring your vision to life.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 bg-[#1A1A1A] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 bg-[#1A1A1A] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Subject</label>
+                                <input type="text" name="subject" required class="w-full px-4 py-3 bg-[#1A1A1A] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Message</label>
+                                <textarea name="message" rows="5" required class="w-full px-4 py-3 bg-[#1A1A1A] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-teal-400"></i>
+                                Email
+                            </h3>
+                            <p class="text-teal-300">info@engitech.com</p>
+                            <p class="text-teal-300">projects@engitech.com</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-teal-400"></i>
+                                Phone
+                            </h3>
+                            <p class="text-teal-300">+1 (555) 123-4567</p>
+                            <p class="text-teal-300">+1 (555) 987-6543</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-teal-400"></i>
+                                Address
+                            </h3>
+                            <p class="text-teal-300">
+                                123 Engineering Plaza<br>
+                                Innovation District<br>
+                                Metro City, MC 12345
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] border-t border-teal-500/10 py-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md flex items-center justify-center">
+                            <div class="w-4 h-4 border-2 border-white rotate-45"></div>
+                        </div>
+                        <span class="text-xl font-bold">ENGITECH</span>
+                    </div>
+                    <p class="text-sm text-teal-300 leading-relaxed">
+                        Engineering Precision. Designing Progress.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-sm text-teal-300 hover:text-teal-400 transition-colors">Home</a>
+                        <a href="#projects" class="block text-sm text-teal-300 hover:text-teal-400 transition-colors">Projects</a>
+                        <a href="#services" class="block text-sm text-teal-300 hover:text-teal-400 transition-colors">Services</a>
+                        <a href="#contact" class="block text-sm text-teal-300 hover:text-teal-400 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-2 text-sm text-teal-300">
+                        <p>info@engitech.com</p>
+                        <p>+1 (555) 123-4567</p>
+                        <p>123 Engineering Plaza<br>Metro City, MC 12345</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-teal-500/10 text-center text-sm text-gray-500">
+                <p>&copy; 2024 ENGITECH. Building Tomorrow, Today.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
 </html>
