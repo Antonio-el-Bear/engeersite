@@ -2,152 +2,152 @@
 const projectsData = [
     {
         id: 1,
-        title: "Skyline Tower Complex",
-        category: "commercial",
+        title: "Automated Warehouse System",
+        category: "automation",
         year: "2024",
-        location: "New York, NY",
-        description: "A 45-story mixed-use development featuring office spaces, retail, and luxury residences.",
-        image: "building-2",
+        location: "Johannesburg, SA",
+        description: "Complete warehouse automation solution with AGV systems and automated storage retrieval.",
+        image: "warehouse",
         details: {
-            client: "Metropolitan Development Corp",
-            duration: "36 months",
-            budget: "$450M",
-            team: "25 engineers",
+            client: "LogiFlow Distribution",
+            duration: "18 months",
+            budget: "R15M",
+            team: "12 engineers",
             features: [
-                "Seismic isolation system",
-                "LEED Platinum certification",
-                "Advanced fire safety systems",
-                "Smart building technology",
-                "Green roof design"
+                "Automated Guided Vehicle System",
+                "Pallet Racking Solutions",
+                "Warehouse Management Integration",
+                "Real-time Inventory Tracking",
+                "Automated Sorting Systems"
             ],
             challenges: [
-                "Complex urban site constraints",
-                "Integration with existing subway system",
-                "High wind load considerations",
-                "Sustainable material sourcing"
+                "Existing infrastructure integration",
+                "24/7 operational requirements",
+                "Scalability for future growth",
+                "Multi-temperature zone handling"
             ]
         }
     },
     {
         id: 2,
-        title: "Golden Gate Bridge Renovation",
-        category: "infrastructure",
-        year: "2023",
-        location: "San Francisco, CA",
-        description: "Comprehensive structural assessment and renovation of iconic suspension bridge.",
-        image: "bridge",
+        title: "Robotic Welding Cell",
+        category: "robotics",
+        year: "2024",
+        location: "Cape Town, SA",
+        description: "Custom robotic welding solution for automotive component manufacturing using Yaskawa systems.",
+        image: "bot",
         details: {
-            client: "California Department of Transportation",
-            duration: "24 months",
-            budget: "$180M",
-            team: "40 engineers",
+            client: "AutoTech Manufacturing",
+            duration: "8 months",
+            budget: "R8.5M",
+            team: "8 engineers",
             features: [
-                "Cable replacement program",
-                "Deck reinforcement",
-                "Corrosion protection systems",
-                "Seismic retrofitting",
-                "Traffic flow optimization"
+                "Yaskawa Robotic Welding System",
+                "Custom Welding Fixtures",
+                "Quality Control Integration",
+                "Safety Light Curtains",
+                "Remote Monitoring Capability"
             ],
             challenges: [
-                "Maintaining traffic during construction",
-                "Extreme weather conditions",
-                "Historical preservation requirements",
-                "Complex logistics coordination"
+                "High precision welding standards",
+                "Integration with existing production",
+                "Safety system implementation",
+                "Operator training requirements"
             ]
         }
     },
     {
         id: 3,
-        title: "EcoVillage Residential",
-        category: "residential",
+        title: "Automated Packaging Line",
+        category: "automation",
         year: "2024",
-        location: "Portland, OR",
-        description: "Sustainable residential community with 200 energy-efficient homes.",
-        image: "home",
+        location: "Durban, SA",
+        description: "Complete automated packaging system with pick & place robots and quality control.",
+        image: "package",
         details: {
-            client: "Green Living Communities",
-            duration: "18 months",
-            budget: "$85M",
-            team: "15 engineers",
+            client: "FoodPack Industries",
+            duration: "12 months",
+            budget: "R12M",
+            team: "10 engineers",
             features: [
-                "Net-zero energy design",
-                "Rainwater harvesting",
-                "Community solar grid",
-                "Geothermal heating",
-                "Native landscaping"
+                "Automated Pick & Place Systems",
+                "Vision Quality Control",
+                "Flexible Packaging Options",
+                "Product Traceability",
+                "Remote Diagnostics"
             ],
             challenges: [
-                "Wetland preservation",
-                "Soil stabilization",
-                "Community integration",
-                "Cost optimization"
+                "Food safety compliance",
+                "Multiple product formats",
+                "High-speed requirements",
+                "Minimal downtime tolerance"
             ]
         }
     },
     {
         id: 4,
-        title: "Industrial Manufacturing Hub",
-        category: "industrial",
+        title: "Custom Product Development",
+        category: "product-development",
         year: "2023",
-        location: "Detroit, MI",
-        description: "Advanced manufacturing facility with automated systems and clean room environments.",
-        image: "factory",
+        location: "Pretoria, SA",
+        description: "Development of specialized mining equipment from concept to manufacturing-ready design.",
+        image: "lightbulb",
         details: {
-            client: "TechManufacture Inc",
-            duration: "30 months",
-            budget: "$220M",
-            team: "35 engineers",
+            client: "MineCore Equipment",
+            duration: "24 months",
+            budget: "R18M",
+            team: "15 engineers",
             features: [
-                "Class 10 clean rooms",
-                "Automated material handling",
-                "Redundant power systems",
-                "Advanced HVAC controls",
-                "Waste heat recovery"
+                "3D CAD Modeling & Rendering",
+                "Finite Element Analysis",
+                "Prototype Development",
+                "Manufacturing Drawings",
+                "Patent Documentation"
             ],
             challenges: [
-                "Precision vibration control",
-                "Complex utility coordination",
-                "Phased construction delivery",
-                "Environmental compliance"
+                "Harsh operating environment",
+                "Safety certification requirements",
+                "Cost optimization",
+                "Material selection constraints"
             ]
         }
     },
     {
         id: 5,
-        title: "Urban Transit Station",
-        category: "infrastructure",
+        title: "Industrial Conveyor System",
+        category: "mechanical",
         year: "2024",
-        location: "Chicago, IL",
-        description: "Multi-modal transportation hub serving bus, rail, and bike share systems.",
-        image: "train",
+        location: "Port Elizabeth, SA",
+        description: "Heavy-duty conveyor system for automotive parts manufacturing with automated sorting.",
+        image: "cog",
         details: {
-            client: "Chicago Transit Authority",
-            duration: "42 months",
-            budget: "$320M",
-            team: "50 engineers",
+            client: "AutoParts SA",
+            duration: "16 months",
+            budget: "R22M",
+            team: "18 engineers",
             features: [
-                "Underground rail platforms",
-                "Weather-protected bus terminals",
-                "Integrated bike facilities",
-                "Passenger flow optimization",
-                "Accessibility compliance"
+                "Heavy-duty Belt Conveyors",
+                "Automated Sorting Systems",
+                "Load Balancing Controls",
+                "Preventive Maintenance Monitoring",
+                "Safety Interlocks"
             ],
             challenges: [
-                "Construction in active transit zone",
-                "Utility relocation",
-                "Noise and vibration control",
-                "Historic district requirements"
+                "Integration with existing systems",
+                "24/7 operational requirements",
+                "Dust and contamination control",
+                "Future expansion capability"
             ]
         }
     },
     {
         id: 6,
-        title: "Luxury Resort & Spa",
-        category: "commercial",
+        title: "Electrical Control System Upgrade",
+        category: "electrical",
         year: "2023",
-        location: "Miami, FL",
-        description: "Oceanfront resort with innovative coastal engineering and sustainable design.",
-        image: "palm-tree",
+        location: "Germiston, SA",
+        description: "Complete electrical system modernization for manufacturing plant with new HMI interfaces.",
+        image: "zap",
         details: {
             client: "Oceanview Hospitality Group",
             duration: "28 months",
