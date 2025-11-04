@@ -1,334 +1,170 @@
-<!DOCTYPE html>import React, { useState, useEffect, useRef } from "react";
-
-<html lang="en">import { base44 } from "@/api/base44Client";
-
-<head>import { useQuery } from "@tanstack/react-query";
-
-    <meta charset="UTF-8">import { motion } from "framer-motion";
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">import { 
-
-    <title>Services - ENGITECH</title>  Building2, 
-
-    <meta name="description" content="Comprehensive engineering services from design to construction management.">  Ruler, 
-
-      HardHat, 
-
-    <!-- Tailwind CSS -->  Leaf, 
-
-    <script src="https://cdn.tailwindcss.com"></script>  CheckCircle 
-
-    } from "lucide-react";
-
+<!DOCTYPE html>
+<!-- PURE HTML VERSION - Updated 2024-11-04 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ENGITECH</title>
+    <meta name="description" content="Comprehensive engineering services from design to construction management.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Custom CSS -->
-
-    <link rel="stylesheet" href="styles/main.css">const iconMap = {
-
-      Building2,
-
-    <!-- Lucide Icons -->  Ruler,
-
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>  HardHat,
-
-</head>  Leaf,
-
-<body class="bg-[#0A0A0A] text-white">};
-
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-[#0A0A0A] text-white">
     <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md flex items-center justify-center">
+                            <div class="w-4 h-4 border-2 border-white rotate-45"></div>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">ENGITECH</span>
+                    </div>
+                </a>
 
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">const defaultServices = [
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Home</a>
+                    <a href="projects.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Projects</a>
+                    <a href="services.html" class="nav-link active text-sm font-medium tracking-wide transition-colors duration-300">Services</a>
+                    <a href="contact.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>
+                </div>
 
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">  {
-
-            <div class="flex items-center justify-between h-20">    title: "Infrastructure Design",
-
-                <!-- Logo -->    icon: "Building2",
-
-                <a href="index.html" class="flex items-center gap-3 group">    description: "Comprehensive design solutions for bridges, roads, and urban infrastructure projects.",
-
-                    <div class="flex items-center gap-2">    features: ["Bridge Engineering", "Highway Design", "Urban Planning", "Traffic Management"],
-
-                        <div class="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md flex items-center justify-center">  },
-
-                            <div class="w-4 h-4 border-2 border-white rotate-45"></div>  {
-
-                        </div>    title: "Structural Analysis",
-
-                        <span class="text-xl font-bold text-white tracking-tight">ENGITECH</span>    icon: "Ruler",
-
-                    </div>    description: "Advanced structural engineering and analysis for buildings of all scales.",
-
-                </a>    features: ["Load Analysis", "Seismic Design", "3D Modeling", "Safety Assessment"],
-
-  },
-
-                <!-- Desktop Navigation -->  {
-
-                <div class="hidden md:flex items-center gap-8">    title: "Construction Management",
-
-                    <a href="index.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Home</a>    icon: "HardHat",
-
-                    <a href="projects.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Projects</a>    description: "End-to-end project management ensuring timely and quality delivery.",
-
-                    <a href="services.html" class="nav-link active text-sm font-medium tracking-wide transition-colors duration-300">Services</a>    features: ["Project Planning", "Quality Control", "Cost Management", "Site Supervision"],
-
-                    <a href="contact.html" class="nav-link text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>  },
-
-                </div>  {
-
-    title: "Sustainability Consulting",
-
-                <!-- Mobile Menu Button -->    icon: "Leaf",
-
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-teal-300 hover:text-white transition-colors" aria-label="Toggle mobile menu">    description: "Green building strategies and sustainable engineering solutions.",
-
-                    <i data-lucide="menu" class="w-6 h-6"></i>    features: ["LEED Certification", "Energy Efficiency", "Environmental Impact", "Green Materials"],
-
-                </button>  },
-
-            </div>];
-
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-teal-300 hover:text-white transition-colors" aria-label="Toggle mobile menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </div>
 
-export default function Services() {
-
-        <!-- Mobile Menu -->  const { data: services = defaultServices, isLoading } = useQuery({
-
-        <div id="mobile-menu" class="md:hidden bg-[#1A1A1A] border-t border-teal-500/10 hidden">    queryKey: ["services"],
-
-            <div class="px-6 py-4 space-y-3">    queryFn: async () => {
-
-                <a href="index.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Home</a>      const data = await base44.entities.Service.list("order");
-
-                <a href="projects.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Projects</a>      return data.length > 0 ? data : defaultServices;
-
-                <a href="services.html" class="mobile-nav-link active block py-2 text-base font-medium transition-colors">Services</a>    },
-
-                <a href="contact.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Contact</a>  });
-
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-[#1A1A1A] border-t border-teal-500/10 hidden">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Home</a>
+                <a href="projects.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Projects</a>
+                <a href="services.html" class="mobile-nav-link active block py-2 text-base font-medium transition-colors">Services</a>
+                <a href="contact.html" class="mobile-nav-link block py-2 text-base font-medium transition-colors">Contact</a>
             </div>
+        </div>
+    </nav>
 
-        </div>  const [inView, setInView] = useState(false);
-
-    </nav>  const ref = useRef(null);
-
-
-
-    <!-- Main Content -->  useEffect(() => {
-
-    <main class="pt-20">    const observer = new IntersectionObserver(
-
-        <!-- Hero Section -->      ([entry]) => {
-
-        <section class="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0F0F0F] to-[#1A1A1A] relative overflow-hidden">        if (entry.isIntersecting) {
-
-            <div class="absolute inset-0 opacity-10">          setInView(true);
-
-                <canvas id="services-canvas"></canvas>        }
-
-            </div>      },
-
-                  { threshold: 0.1 }
-
-            <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">    );
-
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-20 bg-gradient-to-br from-[#0A0A0A] via-[#0F0F0F] to-[#1A1A1A] relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <canvas id="services-canvas"></canvas>
+            </div>
+            
+            <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in">
-
-                    Our <span class="text-teal-400">Services</span>    if (ref.current) {
-
-                </h1>      observer.observe(ref.current);
-
-                <p class="text-xl md:text-2xl text-teal-300 mb-8 font-light tracking-wide slide-up delay-400 max-w-3xl mx-auto">    }
-
+                    Our <span class="text-teal-400">Services</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-teal-300 mb-8 font-light tracking-wide slide-up delay-400 max-w-3xl mx-auto">
                     Comprehensive engineering solutions tailored to meet the unique demands of each project from concept to completion.
-
-                </p>    return () => {
-
-                      if (ref.current) {
-
-                <!-- Service Categories Quick Nav -->        observer.unobserve(ref.current);
-
-                <div class="flex flex-wrap justify-center gap-4 mt-12 fade-in delay-600">      }
-
-                    <a href="#design" class="quick-nav-btn">Design & Planning</a>    };
-
-                    <a href="#structural" class="quick-nav-btn">Structural Engineering</a>  }, []);
-
+                </p>
+                
+                <!-- Service Categories Quick Nav -->
+                <div class="flex flex-wrap justify-center gap-4 mt-12 fade-in delay-600">
+                    <a href="#design" class="quick-nav-btn">Design & Planning</a>
+                    <a href="#structural" class="quick-nav-btn">Structural Engineering</a>
                     <a href="#management" class="quick-nav-btn">Project Management</a>
+                    <a href="#consulting" class="quick-nav-btn">Consulting</a>
+                </div>
+            </div>
+        </section>
 
-                    <a href="#consulting" class="quick-nav-btn">Consulting</a>  return (
-
-                </div>    <div className="min-h-screen bg-[#0A0A0A] py-24">
-
-            </div>      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-        </section>        {/* Header */}
-
-        <motion.div
-
-        <!-- Services Overview -->          initial={{ opacity: 0, y: 20 }}
-
-        <section class="py-20">          animate={{ opacity: 1, y: 0 }}
-
-            <div class="max-w-6xl mx-auto px-6 lg:px-8">          className="text-center mb-20"
-
-                <div class="text-center mb-16">        >
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">What We Do</h2>          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
-
-                    <p class="text-teal-300 max-w-2xl mx-auto">            Our <span className="text-teal-400">Services</span>
-
-                        From initial concept to final delivery, we provide end-to-end engineering solutions that exceed expectations.          </h1>
-
-                    </p>          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-
-                </div>            Precision engineering services tailored to transform your vision into reality
-
-                          </p>
-
-                <div id="services-grid" class="space-y-16">        </motion.div>
-
+        <!-- Services Overview -->
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">What We Do</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        From initial concept to final delivery, we provide end-to-end engineering solutions that exceed expectations.
+                    </p>
+                </div>
+                
+                <div id="services-grid" class="space-y-16">
                     <!-- Services will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
 
-                </div>        {/* Services Grid */}
-
-            </div>        <div ref={ref} className="grid md:grid-cols-2 gap-8">
-
-        </section>          {services.map((service, index) => {
-
-            const IconComponent = iconMap[service.icon] || Building2;
-
-        <!-- Process Section -->            
-
-        <section class="py-20 bg-[#0F0F0F]">            return (
-
-            <div class="max-w-6xl mx-auto px-6 lg:px-8">              <motion.div
-
-                <div class="text-center mb-16">                key={service.title}
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Process</h2>                initial={{ opacity: 0, y: 30 }}
-
-                    <p class="text-teal-300 max-w-2xl mx-auto">                animate={inView ? { opacity: 1, y: 0 } : {}}
-
-                        A proven methodology that ensures project success from start to finish.                transition={{ duration: 0.6, delay: index * 0.15 }}
-
-                    </p>                className="group relative p-8 bg-[#1A1A1A] rounded-xl border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300"
-
-                </div>              >
-
-                                {/* Decorative gradient */}
-
-                <div class="grid md:grid-cols-4 gap-8">                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+        <!-- Process Section -->
+        <section class="py-20 bg-[#0F0F0F]">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Process</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        A proven methodology that ensures project success from start to finish.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-8">
                     <div class="process-step text-center relative">
-
-                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">                <div className="relative">
-
-                            <i data-lucide="lightbulb" class="w-8 h-8 text-teal-400"></i>                  <div className="w-16 h-16 mb-6 bg-teal-500/10 rounded-lg flex items-center justify-center group-hover:bg-teal-500/20 transition-colors duration-300">
-
-                        </div>                    <IconComponent className="w-8 h-8 text-teal-400" />
-
-                        <h3 class="text-xl font-semibold mb-4">1. Discovery</h3>                  </div>
-
-                        <p class="text-teal-300 text-sm">Understanding your vision, requirements, and project goals through comprehensive consultation.</p>
-
-                    </div>                  <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-teal-400 transition-colors">
-
-                                        {service.title}
-
-                    <div class="process-step text-center relative">                  </h3>
-
                         <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
-
-                            <i data-lucide="drafting-compass" class="w-8 h-8 text-teal-400"></i>                  <p className="text-gray-400 mb-6 leading-relaxed">
-
-                        </div>                    {service.description}
-
-                        <h3 class="text-xl font-semibold mb-4">2. Design</h3>                  </p>
-
+                            <i data-lucide="lightbulb" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">1. Discovery</h3>
+                        <p class="text-teal-300 text-sm">Understanding your vision, requirements, and project goals through comprehensive consultation.</p>
+                    </div>
+                    
+                    <div class="process-step text-center relative">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                            <i data-lucide="drafting-compass" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">2. Design</h3>
                         <p class="text-teal-300 text-sm">Creating detailed plans and specifications using cutting-edge design tools and methodologies.</p>
-
-                    </div>                  {service.features && service.features.length > 0 && (
-
-                                        <ul className="space-y-3">
-
-                    <div class="process-step text-center relative">                      {service.features.map((feature, i) => (
-
-                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">                        <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
-
-                            <i data-lucide="hammer" class="w-8 h-8 text-teal-400"></i>                          <CheckCircle className="w-4 h-4 text-teal-400 flex-shrink-0" />
-
-                        </div>                          {feature}
-
-                        <h3 class="text-xl font-semibold mb-4">3. Build</h3>                        </li>
-
-                        <p class="text-teal-300 text-sm">Overseeing construction with rigorous quality control and project management expertise.</p>                      ))}
-
-                    </div>                    </ul>
-
-                                      )}
-
-                    <div class="process-step text-center relative">                </div>
-
-                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">              </motion.div>
-
-                            <i data-lucide="check-circle" class="w-8 h-8 text-teal-400"></i>            );
-
-                        </div>          })}
-
-                        <h3 class="text-xl font-semibold mb-4">4. Deliver</h3>        </div>
-
+                    </div>
+                    
+                    <div class="process-step text-center relative">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                            <i data-lucide="hammer" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">3. Build</h3>
+                        <p class="text-teal-300 text-sm">Overseeing construction with rigorous quality control and project management expertise.</p>
+                    </div>
+                    
+                    <div class="process-step text-center relative">
+                        <div class="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                            <i data-lucide="check-circle" class="w-8 h-8 text-teal-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">4. Deliver</h3>
                         <p class="text-teal-300 text-sm">Ensuring successful project completion with ongoing support and maintenance planning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    </div>        {/* CTA Section */}
-
-                </div>        <motion.div
-
-            </div>          initial={{ opacity: 0, y: 20 }}
-
-        </section>          animate={inView ? { opacity: 1, y: 0 } : {}}
-
-          transition={{ duration: 0.6, delay: 0.8 }}
-
-        <!-- Interactive Calculator -->          className="mt-20 text-center"
-
-        <section class="py-20">        >
-
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">          <div className="bg-gradient-to-r from-teal-500/10 via-teal-500/5 to-transparent p-12 rounded-2xl border border-teal-500/20">
-
-                <div class="text-center mb-16">            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Project Calculator</h2>              Ready to Start Your Project?
-
-                    <p class="text-teal-300 max-w-2xl mx-auto">            </h2>
-
-                        Get an instant estimate for your engineering project with our interactive calculator.            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-
-                    </p>              Let's discuss how our engineering expertise can bring your vision to life
-
-                </div>            </p>
-
-                            <a href={"/contact"}>
-
-                <div class="bg-[#1A1A1A] rounded-lg p-8 border border-teal-500/10">              <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-medium transition-colors">
-
-                    <form id="calculator-form" class="space-y-6">                Get in Touch
-
-                        <div class="grid md:grid-cols-2 gap-6">              </button>
-
-                            <div>            </a>
-
-                                <label class="block text-sm font-medium mb-2">Project Type</label>          </div>
-
-                                <select name="projectType" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">        </motion.div>
-
-                                    <option value="">Select project type</option>      </div>
-
-                                    <option value="commercial">Commercial Building</option>    </div>
-
-                                    <option value="residential">Residential Development</option>  );
-
-                                    <option value="infrastructure">Infrastructure</option>}
+        <!-- Interactive Calculator -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Project Calculator</h2>
+                    <p class="text-teal-300 max-w-2xl mx-auto">
+                        Get an instant estimate for your engineering project with our interactive calculator.
+                    </p>
+                </div>
+                
+                <div class="bg-[#1A1A1A] rounded-lg p-8 border border-teal-500/10">
+                    <form id="calculator-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Project Type</label>
+                                <select name="projectType" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select project type">
+                                    <option value="">Select project type</option>
+                                    <option value="commercial">Commercial Building</option>
+                                    <option value="residential">Residential Development</option>
+                                    <option value="infrastructure">Infrastructure</option>
                                     <option value="industrial">Industrial Facility</option>
                                 </select>
                             </div>
@@ -340,7 +176,7 @@ export default function Services() {
                             
                             <div>
                                 <label class="block text-sm font-medium mb-2">Complexity Level</label>
-                                <select name="complexity" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                                <select name="complexity" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select complexity level">
                                     <option value="">Select complexity</option>
                                     <option value="basic">Basic</option>
                                     <option value="moderate">Moderate</option>
