@@ -322,6 +322,29 @@ if ('performance' in window) {
     });
 }
 
+// Read More Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const readMoreContent = document.getElementById('read-more-content');
+    const readMoreDots = document.getElementById('read-more-dots');
+    
+    if (readMoreBtn && readMoreContent && readMoreDots) {
+        readMoreBtn.addEventListener('click', () => {
+            if (readMoreContent.classList.contains('hidden')) {
+                // Show more content
+                readMoreContent.classList.remove('hidden');
+                readMoreDots.classList.add('hidden');
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                // Hide content
+                readMoreContent.classList.add('hidden');
+                readMoreDots.classList.remove('hidden');
+                readMoreBtn.textContent = 'Read More';
+            }
+        });
+    }
+});
+
 // Error handling
 window.addEventListener('error', (e) => {
     console.error('JavaScript error:', e.error);
