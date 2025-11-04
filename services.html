@@ -154,7 +154,7 @@
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6">Project Calculator</h2>
                     <p class="text-teal-300 max-w-2xl mx-auto">
-                        Get an instant estimate for your engineering project with our interactive calculator.
+                        Get an instant estimate for your engineering project based on our specialized services.
                     </p>
                 </div>
                 
@@ -162,35 +162,44 @@
                     <form id="calculator-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-medium mb-2">Project Type</label>
-                                <select name="projectType" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select project type">
-                                    <option value="">Select project type</option>
-                                    <option value="commercial">Commercial Building</option>
-                                    <option value="residential">Residential Development</option>
-                                    <option value="infrastructure">Infrastructure</option>
-                                    <option value="industrial">Industrial Facility</option>
+                                <label class="block text-sm font-medium mb-2">Service Type</label>
+                                <select name="projectType" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select service type">
+                                    <option value="">Select service type</option>
+                                    <option value="product-development">Product Development</option>
+                                    <option value="mechanical-design">Mechanical Design</option>
+                                    <option value="electrical-design">Electrical Design</option>
+                                    <option value="robotic-systems">Robotic Systems</option>
+                                    <option value="industrial-automation">Industrial Automation</option>
+                                    <option value="logistics-warehouse">Logistics & Warehouse</option>
+                                    <option value="agriculture">Agriculture Solutions</option>
                                 </select>
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-medium mb-2">Project Size (sq ft)</label>
-                                <input type="number" name="projectSize" placeholder="e.g., 10000" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                                <label class="block text-sm font-medium mb-2">Project Scale</label>
+                                <select name="projectSize" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select project scale">
+                                    <option value="">Select project scale</option>
+                                    <option value="small">Small (R50k - R500k)</option>
+                                    <option value="medium">Medium (R500k - R2M)</option>
+                                    <option value="large">Large (R2M - R10M)</option>
+                                    <option value="enterprise">Enterprise (R10M+)</option>
+                                </select>
                             </div>
                             
                             <div>
                                 <label class="block text-sm font-medium mb-2">Complexity Level</label>
                                 <select name="complexity" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors" aria-label="Select complexity level">
                                     <option value="">Select complexity</option>
-                                    <option value="basic">Basic</option>
-                                    <option value="moderate">Moderate</option>
-                                    <option value="complex">Complex</option>
-                                    <option value="advanced">Advanced</option>
+                                    <option value="basic">Basic - Standard solution</option>
+                                    <option value="moderate">Moderate - Custom adaptation</option>
+                                    <option value="complex">Complex - Advanced integration</option>
+                                    <option value="advanced">Advanced - Cutting-edge innovation</option>
                                 </select>
                             </div>
                             
                             <div>
                                 <label class="block text-sm font-medium mb-2">Timeline (months)</label>
-                                <input type="number" name="timeline" placeholder="e.g., 12" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
+                                <input type="number" name="timeline" placeholder="e.g., 6" min="1" max="36" class="w-full px-4 py-3 bg-[#0F0F0F] border border-teal-500/20 rounded-lg focus:border-teal-500 focus:outline-none transition-colors">
                             </div>
                         </div>
                         

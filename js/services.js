@@ -471,7 +471,7 @@ function calculateEstimate() {
     const formData = new FormData(form);
     
     const projectType = formData.get('projectType');
-    const projectSize = parseInt(formData.get('projectSize'));
+    const projectSize = formData.get('projectSize');
     const complexity = formData.get('complexity');
     const timeline = parseInt(formData.get('timeline'));
     
@@ -484,7 +484,7 @@ function calculateEstimate() {
     const estimates = calculateProjectEstimate(projectType, projectSize, complexity, timeline);
     
     // Display results
-    document.getElementById('estimated-cost').textContent = `$${estimates.cost.toLocaleString()}`;
+    document.getElementById('estimated-cost').textContent = `R ${estimates.cost.toLocaleString()}`;
     document.getElementById('estimated-duration').textContent = estimates.duration;
     document.getElementById('team-size').textContent = estimates.teamSize;
     
@@ -496,36 +496,62 @@ function calculateEstimate() {
 }
 
 function calculateProjectEstimate(projectType, projectSize, complexity, timeline) {
-    // Base rates per project type (per sq ft)
-    const baseRates = {
-        commercial: 8,
-        residential: 5,
-        infrastructure: 12,
-        industrial: 10
+    // Base cost ranges for different service types in South African Rand
+    const baseCosts = {
+        'product-development': { min: 80000, max: 2500000 },
+        'mechanical-design': { min: 50000, max: 1500000 },
+        'electrical-design': { min: 40000, max: 800000 },
+        'robotic-systems': { min: 200000, max: 8000000 },
+        'industrial-automation': { min: 150000, max: 5000000 },
+        'logistics-warehouse': { min: 300000, max: 15000000 },
+        'agriculture': { min: 100000, max: 3000000 }
+    };
+    
+    // Project scale multipliers
+    const scaleMultipliers = {
+        small: 0.2,
+        medium: 0.5,
+        large: 0.8,
+        enterprise: 1.0
     };
     
     // Complexity multipliers
     const complexityMultipliers = {
         basic: 1,
-        moderate: 1.3,
-        complex: 1.7,
-        advanced: 2.2
+        moderate: 1.4,
+        complex: 1.8,
+        advanced: 2.5
     };
     
-    // Timeline adjustments
-    const timelineAdjustment = timeline < 6 ? 1.3 : timeline > 24 ? 0.8 : 1;
+    // Timeline adjustments (rush jobs cost more, longer projects may have economies of scale)
+    const timelineAdjustment = timeline < 3 ? 1.5 : timeline < 6 ? 1.2 : timeline > 18 ? 0.9 : 1;
     
-    const baseCost = baseRates[projectType] * projectSize;
+    // Calculate base cost based on service type and scale
+    const serviceBase = baseCosts[projectType] || baseCosts['mechanical-design'];
+    const scaleMultiplier = scaleMultipliers[projectSize] || 0.5;
+    const baseCost = serviceBase.min + (serviceBase.max - serviceBase.min) * scaleMultiplier;
+    
+    // Apply complexity and timeline adjustments
     const adjustedCost = baseCost * complexityMultipliers[complexity] * timelineAdjustment;
     
-    // Team size calculation
-    const baseTeamSize = Math.ceil(projectSize / 5000);
-    const teamSize = Math.min(Math.max(baseTeamSize * complexityMultipliers[complexity], 3), 50);
+    // Team size calculation based on project type and complexity
+    const baseTeamSizes = {
+        'product-development': { min: 2, max: 8 },
+        'mechanical-design': { min: 1, max: 6 },
+        'electrical-design': { min: 1, max: 5 },
+        'robotic-systems': { min: 3, max: 12 },
+        'industrial-automation': { min: 4, max: 15 },
+        'logistics-warehouse': { min: 5, max: 20 },
+        'agriculture': { min: 2, max: 10 }
+    };
+    
+    const teamBase = baseTeamSizes[projectType] || baseTeamSizes['mechanical-design'];
+    const teamSize = Math.round(teamBase.min + (teamBase.max - teamBase.min) * complexityMultipliers[complexity] * 0.4);
     
     return {
         cost: Math.round(adjustedCost),
         duration: timeline,
-        teamSize: Math.round(teamSize)
+        teamSize: Math.min(Math.max(teamSize, 1), 25)
     };
 }
 
@@ -534,7 +560,7 @@ function animateCalculatorResults(estimates) {
     const durationElement = document.getElementById('estimated-duration');
     const teamElement = document.getElementById('team-size');
     
-    animateNumber(costElement, 0, estimates.cost, 2000, (num) => `$${num.toLocaleString()}`);
+    animateNumber(costElement, 0, estimates.cost, 2000, (num) => `R ${num.toLocaleString()}`);
     animateNumber(durationElement, 0, estimates.duration, 1500);
     animateNumber(teamElement, 0, estimates.teamSize, 1000);
 }
